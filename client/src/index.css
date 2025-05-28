@@ -1,1 +1,13 @@
 @import "tailwindcss";
+
+/* div{
+    color: rgba(0, 0, 0, 0.664);
+} */
+
+.title-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 24px;
+  z-index: 999;
+}

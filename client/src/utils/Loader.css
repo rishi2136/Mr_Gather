@@ -1,0 +1,79 @@
+:root {
+  --animationTime: 2s;
+}
+
+.loading-base {
+  display: flex;
+  flex-wrap: wrap;
+  place-content: center;
+  flex-direction: column;
+  color: rgb(221, 79, 103);
+  font-weight: 600;
+  position: fixed;
+  inset: 0;
+  /* margin: auto; */
+  background-color: black;
+  opacity: 0.8;
+  height: 100vh;
+  width: 100%;
+  z-index: 99;
+}
+
+.loading-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 18px;
+}
+
+.dot-group {
+  display: flex;
+  margin: auto;
+}
+
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 2px;
+  border-radius: 50%;
+  background-color: rgb(221, 79, 103);
+  position: relative;
+  /* animation: name duration timing-function delay iteration-count direction
+    fill-mode; */
+
+  animation: jump var(--animationTime) ease-in-out infinite;
+}
+/* The delay between each dot could be d / (n - 1). */
+/* Let n be the number of dots .
+Let d be the animationTime. */
+.one {
+  animation-delay: 0s;
+}
+
+.two {
+  animation-delay: calc(var(--animationTime) / 4 * 1);
+}
+
+.three {
+  animation-delay: calc(var(--animationTime) / 4 * 2);
+}
+
+.four {
+  animation-delay: calc(var(--animationTime) / 4 * 3);
+}
+
+.five {
+  animation-delay: calc(var(--animationTime) / 4 * 4);
+}
+
+@keyframes jump {
+  0% {
+    top: 0px;
+  }
+  50% {
+    top: 18px;
+  }
+  100% {
+    top: 0px;
+  }
+}
