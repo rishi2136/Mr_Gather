@@ -13,12 +13,6 @@ const UserList = () => {
     handleSummary,
   } = useUserManagement();
 
-  // useEffect(() => {
-  //   setAllUser(users);
-  // }, [users]);
-
-  console.log("user_list", users);
-
   return (
     <div className="bg-[#F3F4F6] ">
       {users &&

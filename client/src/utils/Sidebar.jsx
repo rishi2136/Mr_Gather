@@ -13,11 +13,12 @@ function Sidebar({ activeTab }) {
       navigate("/");
     }
   }
+  console.log(currUser);
 
   return (
     <div
       className={` bg-white shadow-lg ${
-        currUser?.isAdmin === true ? "block" : "none"
+        currUser?.isAdmin !== false ? "block" : "none"
       } md:w-64  md:h-screen md:fixed h-auto w-full sticky flex md:block top-16`}
     >
       <nav className="mt-2 flex md:block w-full">

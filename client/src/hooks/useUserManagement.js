@@ -53,10 +53,10 @@ function useUserManagement() {
   const navigate = useNavigate();
   const { setOpenModel } = useGlobelContext();
 
-  console.log("custom_hook", users);
+  // console.log("custom_hook", users);
 
   const handleAddUser = (userInfo) => {
-    console.log("userInfo", userInfo);
+    // console.log("userInfo", userInfo);
 
     const isExist = users.find((u) => u.email === userInfo.email) || null;
 
@@ -71,7 +71,7 @@ function useUserManagement() {
     setUsers((prev) => [{ id: prev.length + 1, ...userInfo }, ...prev]);
   };
 
-  console.log("custom_hook2", users);
+  // console.log("custom_hook2", users);````
 
   const handleEditUser = (id) => {
     const user = users.find((u) => u.id === id);

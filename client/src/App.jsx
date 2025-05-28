@@ -6,41 +6,28 @@ import { Outlet } from "react-router-dom";
 import { Toaster } from "sonner";
 import Sidebar from "./utils/Sidebar";
 import Navber from "./utils/Navber";
+import Loader from "./utils/Loader";
 
 const App = () => {
-  // const [isAdmin, setIsAdmin] = useState(false);
-
-  // // const { isAdmin } =
-  // //   JSON.parse(localStorage.getItem("user") || "{}").isAdmin || false;
-  // useEffect(() => {
-  //   try {
-  //     const user = JSON.parse(localStorage.getItem("user"));
-  //     setIsAdmin(user?.isAdmin);
-  //   } catch (err) {
-  //     console.error("Error parsing user from localStorage:", err);
-  //   }
-  // }, []);
-
   const { currUser } = useGlobelContext();
+  console.log(currUser);
 
   return (
     <>
-      <GlobalEleProvider>
-        <Navber />
+      <Navber />
 
-        <div className="relative h-screen w-full flex md:flex-row flex-col">
-          {currUser?.isAdmin && <Sidebar />}
-          <div
-            className={`flex-grow ${
-              currUser?.isAdmin ? " ms-0 md:ms-64" : "ms-0"
-            } `}
-          >
-            <Outlet context={{ isAdmin: currUser?.isAdmin }} />
-          </div>
+      <div className="relative h-screen w-full flex md:flex-row flex-col">
+        {currUser?.isAdmin && <Sidebar />}
+        <div
+          className={`flex-grow ${
+            currUser?.isAdmin ? " ms-0 md:ms-64" : "ms-0"
+          } `}
+        >
+          <Outlet context={{ isAdmin: currUser?.isAdmin }} />
         </div>
+      </div>
 
-        <Toaster richColors />
-      </GlobalEleProvider>
+      <Toaster richColors />
     </>
   );
 };

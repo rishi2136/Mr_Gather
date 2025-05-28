@@ -11,6 +11,7 @@ import FormWithMapbox from "./pages/FormWithMapbox.jsx";
 import UserList from "./pages/UserList.jsx";
 import ErrorPage from "./utils/ErrorPage.jsx";
 import UserDetailView from "./pages/UserDetailView.jsx";
+import { GlobalEleProvider } from "./context/GlobalContext.jsx";
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <GlobalEleProvider>
+      <RouterProvider router={router} />
+    </GlobalEleProvider>
   </StrictMode>
 );

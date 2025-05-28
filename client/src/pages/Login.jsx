@@ -26,7 +26,7 @@ const Login = () => {
       isAdmin: false,
     });
 
-    navigate("/"); // Example: navigate to '/dashboard'
+    window.location.href = "/";
     setMessage(null);
   };
 
